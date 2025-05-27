@@ -7,3 +7,10 @@ services:
       dockerfile: Dockerfile
     ports:
       - 4200:4200
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+      - WATCHPACK_POLLING=true
+

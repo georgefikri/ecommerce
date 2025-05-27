@@ -7,7 +7,7 @@
   ],
   "scripts": {
     "build": "nx build app --verbose",
-    "start": "nx serve app",
+    "start": "nx serve app --watch",
     "test:app": "nx run app:test",
     "test:services": "nx run services:test",
     "storybook": "nx run components:storybook",
@@ -26,6 +26,7 @@
     "@nx/eslint-plugin": "20.0.0",
     "@nx/jest": "20.0.0",
     "@nx/js": "20.0.0",
+    "@nx/next": "20.0.0",
     "@nx/storybook": "20.0.0",
     "@nx/web": "20.0.0",
     "@nx/workspace": "20.0.0",

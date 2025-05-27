@@ -6,15 +6,15 @@ WORKDIR /app
 
 # Copy the package.json and package-lock.json files to the working directory
 COPY package*.json ./
+COPY nx.json ./
+COPY tsconfig*.json ./
 
 # Install the project dependencies
 RUN npm install
-
-# Copy the rest of the project files to the working directory
-COPY . .
+RUN npm install -g nx
 
 # Expose the default port for the Nx project
 EXPOSE 4200
 
-# Start the development server
-CMD ["npm", "run", "start"]
+# Start the development server with polling enabled
+CMD ["nx", "serve", "app", "--watch"]
