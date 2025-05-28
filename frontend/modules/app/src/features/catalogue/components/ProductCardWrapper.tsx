@@ -26,15 +26,15 @@ export const ProductCardWrapper = ({
     }
   };
 
-  const handleRemoveFromCart = async () => {
-    try {
-      await removeFromCart(product.sku);
-      console.log('item removed from cart');
-      onItemAdded?.();
-    } catch (error) {
-      console.error('Failed to remove product from cart:', error);
-    }
-  };
+  // const handleRemoveFromCart = async () => {
+  //   try {
+  //     await removeFromCart(product.sku);
+  //     console.log('item removed from cart');
+  //     onItemAdded?.();
+  //   } catch (error) {
+  //     console.error('Failed to remove product from cart:', error);
+  //   }
+  // };
 
   return (
     <div style={{ position: 'relative' }}>
@@ -46,7 +46,7 @@ export const ProductCardWrapper = ({
         onAddToCart={handleAddToCart}
         disabled={isInCart}
       />
-      {isInCart && (
+      {/* {isInCart && (
         <button
           onClick={handleRemoveFromCart}
           style={{
@@ -64,7 +64,7 @@ export const ProductCardWrapper = ({
         >
           Remove
         </button>
-      )}
+      )} */}
     </div>
   );
 };

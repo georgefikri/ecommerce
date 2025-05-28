@@ -37,3 +37,64 @@
   min-width: 20px;
   text-align: center;
 }
+
+.dropdown {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background: white;
+  border: 1px solid #ccc;
+  width: 280px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  z-index: 999;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.cartList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cartItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 4px;
+  border-bottom: 1px solid #eee;
+}
+
+.itemInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.itemName {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 2px;
+  word-wrap: break-word;
+}
+
+.itemQuantity {
+  font-size: 13px;
+  color: #666;
+}
+
+.removeButton {
+  background: none;
+  border: none;
+  color: #e74c3c;
+  cursor: pointer;
+  font-size: 16px;
+  padding-left: 8px;
+}
+
+.empty {
+  padding: 8px;
+  text-align: center;
+  color: #999;
+}
