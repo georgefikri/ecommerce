@@ -14,6 +14,13 @@
     "paths": {
       "@components": ["modules/components/src/index.ts"],
       "@services": ["modules/services/index.ts"],
+      "@store/*": ["modules/app/src/store/*"],
+      "@features/*": ["modules/app/src/features/*"],
+      "@api/*": ["modules/app/src/api/*"],
+      "@icons/*": ["modules/app/src/icons/*"],
+      "@styles/*": ["modules/app/src/styles/*"],
+      "@shared-types/*": ["modules/app/src/types/*"],
+      "@shared-components/*": ["modules/app/src/components/*"]
     },
     "plugins": [
       {

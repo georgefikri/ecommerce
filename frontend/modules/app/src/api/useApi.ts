@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { apiClient } from './client';
 
-// GET
 export function useApi<T>(url: string) {
   const [data, setData] = useState<T | null>(null);
   const [error, setError] = useState<unknown>(null);
@@ -24,25 +23,21 @@ export function useApi<T>(url: string) {
   return { data, error, loading };
 }
 
-// POST
 export async function usePost<T>(url: string, body: any): Promise<T> {
   const res = await apiClient.post<T>(url, body);
   return res.data;
 }
 
-// PUT
 export async function usePut<T>(url: string, body: any): Promise<T> {
   const res = await apiClient.put<T>(url, body);
   return res.data;
 }
 
-// PATCH
 export async function usePatch<T>(url: string, body: any): Promise<T> {
   const res = await apiClient.patch<T>(url, body);
   return res.data;
 }
 
-// DELETE
 export async function useDelete<T>(url: string): Promise<T> {
   const res = await apiClient.delete<T>(url);
   return res.data;

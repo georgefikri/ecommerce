@@ -1,16 +1,13 @@
 import React, { useState } from 'react';
-import styles from './Header.module.css';
-import { useCartStore } from '../store/useCartStore';
+import styles from '@styles/Header.module.css';
+import { useCartStore } from '@store/useCartStore';
+import CartIcon from '@icons/CartIcon';
+import TrashIcon from '@icons/TrashIcon';
 
-type HeaderProps = {
-  cartItemCount: number;
-};
-
-const Header = ({ cartItemCount }: HeaderProps) => {
+const Header = () => {
   const cartItems = useCartStore((s) => s.cartItems);
   const removeFromCart = useCartStore((s) => s.removeFromCart);
 
-  console.log('cartItems zustand', cartItems);
   const [isOpen, setIsOpen] = useState(false);
   const toggleDropDown = () => {
     setIsOpen((prev) => !prev);
@@ -20,7 +17,7 @@ const Header = ({ cartItemCount }: HeaderProps) => {
     <header className={styles.header}>
       <div className={styles.logo}>🛍️ MyShop</div>
       <div className={styles.cart} onClick={toggleDropDown}>
-        🛒 Cart
+        <CartIcon className={styles.cartIcon} /> Cart
         <span className={styles.cartBadge}>{cartItems?.length}</span>
         {isOpen && (
           <div className={styles.dropdown}>
@@ -40,7 +37,7 @@ const Header = ({ cartItemCount }: HeaderProps) => {
                       className={styles.removeButton}
                       onClick={() => removeFromCart(item.id ?? item.itemId)}
                     >
-                      ❌
+                      <TrashIcon className={styles.trashIcon} />
                     </button>
                   </li>
                 ))}

@@ -1,6 +1,8 @@
 import { ProductCard } from '@components';
 import { Product } from 'modules/app/src/types/types';
-import { addToCart, removeFromCart } from '../../../api/cart';
+import { addToCart } from '@api/cart';
+import { useCartStore } from '@store/useCartStore';
+import styles from '@styles/ProductCardWrapper.module.css';
 
 type Props = {
   product: Product;
@@ -12,6 +14,8 @@ export const ProductCardWrapper = ({
   onItemAdded,
   cartItems,
 }: Props) => {
+  const loadCart = useCartStore((s) => s.loadCart);
+
   const isInCart = cartItems.some((item) => item.itemId === product.sku);
 
   const handleAddToCart = async () => {
@@ -19,6 +23,7 @@ export const ProductCardWrapper = ({
 
     try {
       await addToCart(product);
+      await loadCart();
       console.log('item added to cart');
       onItemAdded?.();
     } catch (error) {
@@ -26,18 +31,8 @@ export const ProductCardWrapper = ({
     }
   };
 
-  // const handleRemoveFromCart = async () => {
-  //   try {
-  //     await removeFromCart(product.sku);
-  //     console.log('item removed from cart');
-  //     onItemAdded?.();
-  //   } catch (error) {
-  //     console.error('Failed to remove product from cart:', error);
-  //   }
-  // };
-
   return (
-    <div style={{ position: 'relative' }}>
+    <div className={styles.fixedHeightCard}>
       <ProductCard
         image={product.imageUrl}
         title={product.name}
@@ -46,25 +41,6 @@ export const ProductCardWrapper = ({
         onAddToCart={handleAddToCart}
         disabled={isInCart}
       />
-      {/* {isInCart && (
-        <button
-          onClick={handleRemoveFromCart}
-          style={{
-            position: 'absolute',
-            top: 10,
-            right: 10,
-            padding: '4px 8px',
-            fontSize: '12px',
-            backgroundColor: '#dc3545',
-            color: '#fff',
-            border: 'none',
-            borderRadius: '4px',
-            cursor: 'pointer',
-          }}
-        >
-          Remove
-        </button>
-      )} */}
     </div>
   );
 };

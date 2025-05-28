@@ -1,6 +1,6 @@
 import { apiClient } from './client';
 import { API_ENDPOINTS } from './endpoints';
-import { Product } from '../types/types';
+import { Product } from '@shared-types/types';
 
 export async function addToCart(product: Product) {
   const payload = {
