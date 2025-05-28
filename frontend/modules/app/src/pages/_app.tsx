@@ -1,6 +1,7 @@
 import { AppProps } from 'next/app';
 import Head from 'next/head';
-import './styles.css';
+import '../styles/styles.css';
+import '../styles/catalogue.css';
 import { appName } from '@services';
 
 function CustomApp({ Component, pageProps }: AppProps) {

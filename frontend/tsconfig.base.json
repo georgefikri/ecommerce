@@ -15,7 +15,11 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@components/*": ["modules/components/src/*"]
+      "@components/*": ["modules/components/src/*"],
+      "@api/*": ["modules/app/src/api/*"],
+      "@features/*": ["modules/app/src/features/*"],
+      "@store/*": ["modules/app/src/store/*"],
+      "@lib/*": ["modules/app/src/lib/*"]
     }
   },
   "include": ["globals.d.ts"],

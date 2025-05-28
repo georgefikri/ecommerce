@@ -8,6 +8,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
   description,
   price,
   onAddToCart,
+  disabled = false,
 }) => {
   return (
     <div className={styles.productCard}>
@@ -16,7 +17,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
       <p className={styles.productDescription}>{description}</p>
       <p className={styles.productPrice}>{price}€</p>
       <button onClick={onAddToCart} className={styles.addToCartButton}>
-        Add to Cart
+        {disabled ? 'Already in Cart' : 'Add to Cart'}
       </button>
     </div>
   );
