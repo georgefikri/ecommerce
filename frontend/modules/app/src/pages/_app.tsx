@@ -7,7 +7,7 @@ function CustomApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>Welcome to Celfocus! {appName()}</title>
+        <title>My Shop {appName()}</title>
       </Head>
       <main className="app">
         <Component {...pageProps} />
