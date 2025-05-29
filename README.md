@@ -50,4 +50,4 @@
 
 ### 🌐 Offline Support
 
-Previously-fetched product list is cached in localStorage
+- Previously-fetched product list is cached in localStorage
