@@ -48,5 +48,6 @@
 
 ---
 
-🌐 Offline Support
+### 🌐 Offline Support
+
 Previously-fetched product list is cached in localStorage
