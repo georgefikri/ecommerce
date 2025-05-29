@@ -1,0 +1,56 @@
+
+.catalogueFlex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 32px;
+  padding: 0 32px;
+  margin: 0 auto;
+  max-width: 1440px;
+}
+
+.cardWrapper {
+  flex: 1 1 100%;
+  max-width: 100%;
+}
+
+
+@media (min-width: 640px) {
+  .cardWrapper {
+    flex: 1 1 calc(50% - 32px);
+    max-width: calc(50% - 32px);
+  }
+}
+
+
+@media (min-width: 768px) {
+  .cardWrapper {
+    flex: 1 1 calc(33.333% - 32px);
+    max-width: calc(33.333% - 32px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .cardWrapper {
+    flex: 1 1 calc(25% - 32px);
+    max-width: calc(25% - 32px);
+  }
+}
+
+@media (max-width: 710px) {
+  .catalogueFlex {
+    gap: 16px;
+    padding: 0 16px;
+  }
+}
+
+@media (max-width: 650px) {
+  .catalogueFlex {
+    justify-content: center;
+  }
+
+  .cardWrapper {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}

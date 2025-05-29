@@ -4,6 +4,7 @@ import { CartItem, Product } from '@shared-types/types';
 import { useCartStore } from '@store/useCartStore';
 import { useApi } from '@api/useApi';
 import { API_ENDPOINTS } from '@api/endpoints';
+import styles from '@styles/catalogue.module.css';
 
 type CatalogueProps = {
   products: Product[];
@@ -12,7 +13,6 @@ type CatalogueProps = {
 export function Catalogue({ products }: CatalogueProps) {
   const setCartItems = useCartStore((s) => s.setCartItems);
   const cartItems = useCartStore((s) => s.cartItems);
-  const clearCart = useCartStore((s) => s.clearCart);
 
   const { data } = useApi<CartItem[]>(API_ENDPOINTS.cartItems);
 
@@ -23,8 +23,7 @@ export function Catalogue({ products }: CatalogueProps) {
   }, [data, setCartItems]);
   return (
     <>
-      {/* TODO: remove classname and use css module */}
-      <div className="grid">
+      <div className={styles.catalogueFlex}>
         {products.map((product) => (
           <ProductCardWrapper
             key={product.sku}
