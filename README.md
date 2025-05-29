@@ -45,3 +45,8 @@
 
 - Modular folder structure with **path alias support**:
   - `@api`, `@store`
+
+---
+
+🌐 Offline Support
+Previously-fetched product list is cached in localStorage
