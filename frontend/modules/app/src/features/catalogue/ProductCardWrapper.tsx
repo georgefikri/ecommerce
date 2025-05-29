@@ -1,6 +1,6 @@
 import { ProductCard } from '@components';
 import { Product } from 'modules/app/src/types/types';
-import { addToCart } from '@api/cart';
+import { addToCart } from '@api/cartActions';
 import { useCartStore } from '@store/useCartStore';
 import styles from '@styles/ProductCardWrapper.module.css';
 

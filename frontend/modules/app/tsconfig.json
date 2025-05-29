@@ -20,7 +20,8 @@
       "@icons/*": ["modules/app/src/icons/*"],
       "@styles/*": ["modules/app/src/styles/*"],
       "@shared-types/*": ["modules/app/src/types/*"],
-      "@shared-components/*": ["modules/app/src/components/*"]
+      "@shared-components/*": ["modules/app/src/components/*"],
+      "@hooks/*": ["modules/app/src/hooks/*"]
     },
     "plugins": [
       {

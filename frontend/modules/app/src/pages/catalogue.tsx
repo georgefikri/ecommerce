@@ -2,8 +2,8 @@ import { useEffect } from 'react';
 import { ProductCardWrapper } from '@features/catalogue/ProductCardWrapper';
 import { CartItem, Product } from '@shared-types/types';
 import { useCartStore } from '@store/useCartStore';
-import { useApi } from '@api/useApi';
-import { API_ENDPOINTS } from '@api/endpoints';
+import { useApi } from '@hooks/useApiClient';
+import { API_ENDPOINTS } from '@api/apiEndpoints';
 import styles from '@styles/catalogue.module.css';
 
 type CatalogueProps = {

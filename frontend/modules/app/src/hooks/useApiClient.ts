@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { apiClient } from './client';
+import { apiClient } from '../api/httpClient';
 
 export function useApi<T>(url: string) {
   const [data, setData] = useState<T | null>(null);

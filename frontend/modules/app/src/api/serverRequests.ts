@@ -1,4 +1,4 @@
-import { apiClient } from './client';
+import { apiClient } from './httpClient';
 
 export async function serverFetch<T>(url: string): Promise<T> {
   const res = await apiClient.get<T>(url);

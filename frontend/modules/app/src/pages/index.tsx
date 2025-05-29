@@ -1,7 +1,7 @@
 import Catalogue from './catalogue';
 import { GetServerSideProps } from 'next';
-import { serverFetch } from '@api/server';
-import { API_ENDPOINTS } from '@api/endpoints';
+import { serverFetch } from '@api/serverRequests';
+import { API_ENDPOINTS } from '@api/apiEndpoints';
 import { Product } from '@shared-types/types';
 import Header from '@shared-components/Header';
 

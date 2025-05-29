@@ -1,5 +1,5 @@
-import { apiClient } from './client';
-import { API_ENDPOINTS } from './endpoints';
+import { apiClient } from './httpClient';
+import { API_ENDPOINTS } from './apiEndpoints';
 import { Product } from '@shared-types/types';
 
 export async function addToCart(product: Product) {

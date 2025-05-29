@@ -4,8 +4,8 @@ import {
   addToCart as apiAdd,
   removeFromCart as apiRemove,
   clearCart as apiClearCart,
-} from '@api/cart';
-import { apiClient } from '@api/client';
+} from '@api/cartActions';
+import { apiClient } from '@api/httpClient';
 
 type CartItem = {
   id?: string;
