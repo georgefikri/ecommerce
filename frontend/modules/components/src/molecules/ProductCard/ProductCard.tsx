@@ -12,9 +12,14 @@ const ProductCard: React.FC<ProductCardProps> = ({
 }) => {
   return (
     <div className={styles.productCard}>
-      <img src={image} alt={title} className={styles.productImage} />
+      <div className={styles.productImageWrapper}>
+        <img src={image} alt={title} className={styles.productImage} />
+        <div className={styles.floatingDescription}>
+          <h3>{title}</h3>
+          <p>{description}</p>
+        </div>
+      </div>
       <h2 className={styles.productTitle}>{title}</h2>
-      <p className={styles.productDescription}>{description}</p>
       <p className={styles.productPrice}>{price}€</p>
       <button onClick={onAddToCart} className={styles.addToCartButton}>
         {disabled ? 'Already in Cart' : 'Add to Cart'}
